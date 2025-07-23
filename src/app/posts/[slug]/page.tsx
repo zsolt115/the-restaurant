@@ -5,9 +5,13 @@ type Props = {
   params: { slug: string };
 };
 
-export default async function PostPage({ params }: Props) {
-  const post = posts.find(p => p.slug === params.slug);
+export async function generateStaticParams() {
+  return posts.map(post => ({ slug: post.slug }));
+}
 
+export default async function PostPage({ params }: Props) {
+  params = await params // for the error Error: Route "/posts/[slug]" used `params.slug`. `params` should be awaited before using its properties
+  const post = posts.find(p => p.slug === params.slug);
   if (!post) return notFound();
 
   return (
