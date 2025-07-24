@@ -21,3 +21,10 @@ main {
 .title-like {
   color: #B99F62;
 }
+
+// Bonus Tip: Styling Links: You can still style them like a tags in your SCSS:
+nav a {
+  color: #61dafb;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
