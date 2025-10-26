@@ -1,0 +1,62 @@
+.menuPage {
+  background: var(--color-bg-secondary);
+  border-radius: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  color: var(--color-text);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.title-h1 {
+  text-align: center;
+  color: var(--color-gold);
+  margin-bottom: 2rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  border-bottom: 1px solid var(--color-gold);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem; /* space between image and text */
+  margin-bottom: 1.5rem;
+}
+
+.item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  flex-shrink: 0; /* prevents image from shrinking */
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item h3 {
+  margin: 0;
+  color: var(--color-gold);
+}
+
+.item p {
+  margin: 0.25rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.price {
+  color: var(--color-text);
+  font-weight: bold;
+  margin-top: 0.5rem;
+}

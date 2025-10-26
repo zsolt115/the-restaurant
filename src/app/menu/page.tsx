@@ -1,19 +1,27 @@
-import Link from 'next/link';
-import { posts } from '@/lib/posts';
+import styles from "./menu.module.scss";
+import { menuItems } from "@/lib/menuItems";
 
 export default function MenuPage() {
   return (
-    <main>
-      <h1>Menu</h1>
-      <ul>
-        {posts.map(post => (
-          <li key={post.id}>
-            <Link href={`/posts/${post.slug}`}>
-              {post.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <main className={styles.menuPage}>
+      <h1 className="title-h1">Menu</h1>
+      {menuItems.map((section) => (
+        <section key={section.category} className={styles.section}>
+          <h2>{section.category}</h2>
+          <ul>
+            {section.items.map((item) => (
+              <li key={item.name} className={styles.item}>
+                {item.image && <img src={item.image} alt={item.name} />}
+                <div className={styles.details}>
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                  <span className={styles.price}>{item.price}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
     </main>
   );
 }

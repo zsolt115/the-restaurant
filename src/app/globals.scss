@@ -1,8 +1,15 @@
 body {
   font-family: sans-serif;
-  background:     
-    radial-gradient(ellipse at 30% 30%, rgba(255, 204, 100, 0.1) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 70%, rgba(255, 100, 100, 0.1) 0%, transparent 60%),
+  background: radial-gradient(
+      ellipse at 30% 30%,
+      rgba(255, 204, 100, 0.1) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 70% 70%,
+      rgba(255, 100, 100, 0.1) 0%,
+      transparent 60%
+    ),
     radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
   padding: 2rem;
   height: 100vh;
@@ -10,19 +17,17 @@ body {
 }
 
 main {
-  background: #0D0D0C;
+  background: #0d0d0c;
   padding: 2rem;
   border-radius: 8px;
   max-width: 700px;
   margin: 0 auto;
 }
 
-
 .title-like {
-  color: #B99F62;
+  color: #b99f62;
 }
 
-// Bonus Tip: Styling Links: You can still style them like a tags in your SCSS:
 nav a {
   color: #61dafb;
   text-decoration: none;
