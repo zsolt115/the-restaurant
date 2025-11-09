@@ -1,3 +1,18 @@
+import { pizzaMenu } from "./menu-category/pizza";
+// import { burgerMenu } from "./menu-category/burgers";
+// import { soupMenu } from "./menu-category/soups";
+// import { dessertMenu } from "./menu-category/desserts";
+// import { drinkMenu } from "./menu-category/drinks";
+
+export const menuItems = [
+  ...pizzaMenu,
+  // ...burgerMenu,
+  // ...soupMenu,
+  // ...dessertMenu,
+  // ...drinkMenu,
+];
+
+/*
 export const menuItems = [
   {
     category: "Soup",
@@ -222,3 +237,4 @@ export const menuItems = [
     ],
   },
 ];
+*/
