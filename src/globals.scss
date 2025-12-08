@@ -1,8 +1,15 @@
+:root {
+  --color-bg-main: #a15319a3;
+  --color-bg-secondary: #131c1c;
+  --color-text: #cac8c8;
+  --color-gold: #d4af37;
+  --color-muted: #777;
+  --color-button: #bc914c;
+}
+
 body {
   font-family: sans-serif;
-  background: radial-gradient(circle at 30% 30%, #332500, transparent 60%),
-    radial-gradient(circle at 70% 70%, #23271e, transparent 60%),
-    linear-gradient(to bottom, #000000 0%, #1a1a1a 100%);
+  background: var(--color-bg-main);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;

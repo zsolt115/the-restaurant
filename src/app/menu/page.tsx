@@ -1,10 +1,11 @@
 import styles from "./menu.module.scss";
 import { menuItems } from "@/lib/menuItems";
+// import Image from "next/image";
 
 export default function MenuPage() {
   return (
     <main className={styles.menuPage}>
-      <h1 className="title-h1">Menu</h1>
+      <h1 className={styles.title_h1}>Menu</h1>
       {menuItems.map((section) => (
         <section key={section.category} className={styles.section}>
           <h2>{section.category}</h2>

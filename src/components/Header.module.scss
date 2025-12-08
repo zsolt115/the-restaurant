@@ -1,59 +1,177 @@
 .header {
-  display: flex;
-  justify-content: space-between;
+  background: #0f1619;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  background: #0d0d0d;
-  padding: 1.5rem 3rem;
-  border-bottom: 1px solid #222;
-  margin-bottom: 3rem;
-  top: 0;
-  position: relative;
+  padding: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-.logo {
+.logoSection {
+  background: linear-gradient(135deg, #2a3f42, #1f2d2f);
+  padding: 32px 48px;
+  border-right: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.logoLink {
+  text-decoration: none;
+  display: block;
+}
+
+.logoBrand {
   display: flex;
   align-items: center;
-  color: #d4af37;
-  font-weight: bold;
+  gap: 12px;
+}
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+.logoSymbol {
+  width: 48px;
+  height: 48px;
+  background: #d4af37;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0f1619;
+  letter-spacing: 1px;
 }
 
 .logoText {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.initials {
+  color: #d4af37;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 3px;
   line-height: 1;
+}
 
-  .initials {
-    font-size: 2rem;
-    color: #d4af37;
-  }
-
-  .tagline {
-    font-size: 0.8rem;
-    color: #f5f5f5;
-    font-family: serif;
-    margin-top: -4px; // lifts it a bit
-    letter-spacing: 0.5px;
-  }
+.tagline {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 4px;
 }
 
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: 8px;
+  padding: 0 40px;
+  justify-content: center;
 
   a {
-    color: #f5f5f5;
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
+    padding: 12px 24px;
     font-weight: 500;
-    transition: color 0.2s ease;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 
     &:hover {
       color: #d4af37;
+      background: rgba(212, 175, 55, 0.1);
     }
+  }
+}
+
+.ctaSection {
+  padding: 32px 48px;
+  border-left: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.ctaButton {
+  background: #d4af37;
+  color: #0f1619;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 13px;
+  display: inline-block;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #f4d03f;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  }
+}
+
+// Responsive styles
+@media (max-width: 1024px) {
+  .header {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .logoSection {
+    border-right: none;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 24px 32px;
+  }
+
+  .logoBrand {
+    justify-content: center;
+  }
+
+  .nav {
+    padding: 24px 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .ctaSection {
+    border-left: none;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 24px 32px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .logoSection {
+    padding: 20px 24px;
+  }
+
+  .logoSymbol {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .initials {
+    font-size: 24px;
+  }
+
+  .tagline {
+    font-size: 9px;
+  }
+
+  .nav {
+    padding: 16px 24px;
+    gap: 4px;
+
+    a {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+  }
+
+  .ctaSection {
+    padding: 20px 24px;
+  }
+
+  .ctaButton {
+    padding: 12px 24px;
+    font-size: 12px;
   }
 }
