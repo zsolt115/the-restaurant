@@ -16,16 +16,21 @@ export default function Footer() {
           <div>
             <h2>Opening Hours</h2>
           </div>
-          <div className={styles.openingTime}>
+          <div className={styles.footerMidSectionDetails}>
             <span>Mon – Thu: 11:00 AM – 10:00 PM</span>
             <span>Fri – Sat: 11:00 AM – 11:30 PM</span>
             <span>Sun: 12:00 PM – 9:00 PM</span>
           </div>
         </div>
         <div className={styles.addressSection}>
-          <span>123 Main Street, New York, NY</span>
-          <span>📞 (555) 123-4567</span>
-          <span>✉️ info@therestaurant.com</span>
+          <div>
+            <h2>Contact info</h2>
+          </div>
+          <div className={styles.footerMidSectionDetails}>
+            <span>123 Main Street, New York, NY</span>
+            <span>📞 (555) 123-4567</span>
+            <span>✉️ info@therestaurant.com</span>
+          </div>
         </div>
       </nav>
       <div className={styles.infoPrivacyAndTerms}>
