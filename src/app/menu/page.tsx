@@ -16,6 +16,15 @@ export default function MenuPage() {
                 <div className={styles.details}>
                   <h3>{item.name}</h3>
                   <p>{item.description}</p>
+                  <p>{item.ingredients}</p>
+                  <p>{item.portion}</p>
+                  <ul>
+                    {Object.entries(item.nutrition).map(([key, value]) => (
+                      <li key={key}>
+                        {key.charAt(0).toUpperCase() + key.slice(1)} : {value}
+                      </li>
+                    ))}
+                  </ul>
                   <span className={styles.price}>{item.price}</span>
                 </div>
               </li>
