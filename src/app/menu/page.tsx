@@ -1,11 +1,49 @@
+import {
+  Star,
+  Soup,
+  Pizza,
+  Beef,
+  Coffee,
+  IceCream,
+  UtensilsCrossed,
+} from "lucide-react";
 import styles from "./menu.module.scss";
 import { menuItems } from "@/lib/menuItems";
 // import Image from "next/image";
 
 export default function MenuPage() {
+  const categories = [
+    { name: "Popular", icon: Star },
+    { name: "Soups", icon: Soup },
+    { name: "Pizza", icon: Pizza },
+    { name: "Burger", icon: Beef },
+    { name: "Pasta", icon: UtensilsCrossed },
+    { name: "Dessert", icon: IceCream },
+    { name: "Drink", icon: Coffee },
+  ];
+
   return (
     <main className={styles.menuPage}>
       <h1 className={styles.title_h1}>Menu</h1>
+
+      <div className={styles.selectCategory}>
+        {categories.map((cat, index) => {
+          const Icon = cat.icon;
+
+          return (
+            <button
+              key={cat.name}
+              className={`${styles.categoryBtn} ${
+                index === 0 ? styles.active : ""
+              }`}
+            >
+              <Icon className={styles.icon} />
+              <span className={styles.label}>{cat.name}</span>
+            </button>
+          );
+        })}
+      </div>
+
       {menuItems.map((section) => (
         <section key={section.category} className={styles.section}>
           <h2>{section.category}</h2>
