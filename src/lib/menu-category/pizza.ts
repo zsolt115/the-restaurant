@@ -24,6 +24,7 @@ export const pizzaMenu = [
           fat: "34g",
           salt: "3.2g",
         },
+        popular: false,
       },
       {
         name: "Pepperoni Pizza",
@@ -41,6 +42,7 @@ export const pizzaMenu = [
           fat: "48g",
           salt: "4.5g",
         },
+        popular: true,
       },
       {
         name: "BBQ Chicken Pizza",
@@ -65,6 +67,7 @@ export const pizzaMenu = [
           fat: "38g",
           salt: "4.0g",
         },
+        popular: false,
       },
       {
         name: "Vegetarian Pizza",
@@ -90,6 +93,7 @@ export const pizzaMenu = [
           fat: "32g",
           salt: "3.6g",
         },
+        popular: false,
       },
       {
         name: "Four Cheese Pizza",
@@ -114,6 +118,7 @@ export const pizzaMenu = [
           fat: "56g",
           salt: "4.8g",
         },
+        popular: true,
       },
     ],
   },

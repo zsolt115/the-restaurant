@@ -1,6 +1,6 @@
 export const soupsMenu = [
   {
-    category: "Soups",
+    category: "Soup",
     items: [
       {
         name: "Tomato Basil Soup",
@@ -26,6 +26,7 @@ export const soupsMenu = [
           fat: "16g",
           salt: "1.8g",
         },
+        popular: false,
       },
       {
         name: "Chicken Noodle Soup",
@@ -51,6 +52,7 @@ export const soupsMenu = [
           fat: "12g",
           salt: "2.5g",
         },
+        popular: true,
       },
       {
         name: "Mushroom Cream Soup",
@@ -76,6 +78,7 @@ export const soupsMenu = [
           fat: "32g",
           salt: "2.2g",
         },
+        popular: false,
       },
       {
         name: "Lentil Soup",
@@ -102,6 +105,7 @@ export const soupsMenu = [
           fat: "10g",
           salt: "2.0g",
         },
+        popular: false,
       },
       {
         name: "Minestrone Soup",
@@ -128,6 +132,7 @@ export const soupsMenu = [
           fat: "8g",
           salt: "2.4g",
         },
+        popular: false,
       },
     ],
   },

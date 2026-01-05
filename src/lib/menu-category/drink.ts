@@ -1,6 +1,6 @@
 export const drinkMenu = [
   {
-    category: "Drinks",
+    category: "Drink",
     items: [
       {
         name: "Coca-Cola",
@@ -24,6 +24,7 @@ export const drinkMenu = [
           fat: "0g",
           salt: "0g",
         },
+        popular: false,
       },
       {
         name: "Orange Juice",
@@ -40,6 +41,7 @@ export const drinkMenu = [
           fat: "0g",
           salt: "0g",
         },
+        popular: false,
       },
       {
         name: "Lemonade",
@@ -56,6 +58,7 @@ export const drinkMenu = [
           fat: "0g",
           salt: "0g",
         },
+        popular: false,
       },
       {
         name: "Iced Coffee",
@@ -73,6 +76,7 @@ export const drinkMenu = [
           fat: "2g",
           salt: "0.1g",
         },
+        popular: false,
       },
       {
         name: "Green Tea",
@@ -89,6 +93,7 @@ export const drinkMenu = [
           fat: "0g",
           salt: "0g",
         },
+        popular: false,
       },
     ],
   },

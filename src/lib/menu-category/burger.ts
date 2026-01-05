@@ -1,6 +1,6 @@
 export const burgerMenu = [
   {
-    category: "Burgers",
+    category: "Burger",
     items: [
       {
         name: "Classic Cheeseburger",
@@ -25,6 +25,7 @@ export const burgerMenu = [
           fat: "32g",
           salt: "2.4g",
         },
+        popular: false,
       },
       {
         name: "Bacon BBQ Burger",
@@ -49,6 +50,7 @@ export const burgerMenu = [
           fat: "44g",
           salt: "3.1g",
         },
+        popular: true,
       },
       {
         name: "Mushroom Swiss Burger",
@@ -72,6 +74,7 @@ export const burgerMenu = [
           fat: "40g",
           salt: "2.6g",
         },
+        popular: false,
       },
       {
         name: "Spicy Chicken Burger",
@@ -95,6 +98,7 @@ export const burgerMenu = [
           fat: "30g",
           salt: "2.8g",
         },
+        popular: false,
       },
       {
         name: "Veggie Burger",
@@ -119,6 +123,7 @@ export const burgerMenu = [
           fat: "26g",
           salt: "2.0g",
         },
+        popular: false,
       },
     ],
   },

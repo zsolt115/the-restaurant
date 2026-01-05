@@ -27,6 +27,7 @@ export const pastaMenu = [
           fat: "28g",
           salt: "3.2g",
         },
+        popular: false,
       },
       {
         name: "Chicken Alfredo",
@@ -52,6 +53,7 @@ export const pastaMenu = [
           fat: "46g",
           salt: "3.6g",
         },
+        popular: true,
       },
       {
         name: "Penne Arrabbiata",
@@ -77,6 +79,7 @@ export const pastaMenu = [
           fat: "20g",
           salt: "2.8g",
         },
+        popular: false,
       },
       {
         name: "Pesto Pasta",
@@ -102,6 +105,7 @@ export const pastaMenu = [
           fat: "38g",
           salt: "3.0g",
         },
+        popular: false,
       },
       {
         name: "Mushroom Truffle Pasta",
@@ -127,6 +131,7 @@ export const pastaMenu = [
           fat: "44g",
           salt: "3.4g",
         },
+        popular: false,
       },
     ],
   },

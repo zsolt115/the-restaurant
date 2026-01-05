@@ -1,6 +1,6 @@
 export const dessertMenu = [
   {
-    category: "Desserts",
+    category: "Dessert",
     items: [
       {
         name: "Chocolate Lava Cake",
@@ -26,6 +26,7 @@ export const dessertMenu = [
           fat: "34g",
           salt: "0.9g",
         },
+        popular: true,
       },
       {
         name: "Classic Cheesecake",
@@ -50,6 +51,7 @@ export const dessertMenu = [
           fat: "44g",
           salt: "1.1g",
         },
+        popular: true,
       },
       {
         name: "Tiramisu",
@@ -75,6 +77,7 @@ export const dessertMenu = [
           fat: "30g",
           salt: "0.8g",
         },
+        popular: false,
       },
       {
         name: "Apple Pie",
@@ -100,6 +103,7 @@ export const dessertMenu = [
           fat: "22g",
           salt: "0.7g",
         },
+        popular: false,
       },
       {
         name: "Vanilla Panna Cotta",
@@ -125,6 +129,7 @@ export const dessertMenu = [
           fat: "26g",
           salt: "0.6g",
         },
+        popular: false,
       },
     ],
   },
