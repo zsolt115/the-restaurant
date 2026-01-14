@@ -27,6 +27,34 @@ export default function MenuPage() {
   ];
 
   const [activeCategory, setActiveCategory] = useState("Popular");
+  const [selectedMenuCategory, setSelectedMenuCategory] = useState(0);
+
+const filteredItems = menuItems.flatMap((section) => {
+  if (activeCategory === "Popular") {
+    return section.items
+      .filter((item) => item.popular)
+      .map(item => ({...item, category: "Popular"}));
+  }
+
+  if (activeCategory === section.category) {
+    return section.items.map(item => ({...item, category: section.category}));
+  }
+
+  return [];
+});
+
+  const groupedSections = Object.entries(
+    filteredItems.reduce((acc, item) => {
+      if (!acc[item.category]) {
+        acc[item.category] = [];
+      }
+      acc[item.category].push(item);
+      return acc;
+    }, {} as Record<string, typeof filteredItems>)
+  ).map(([category, items]) => ({
+    category,
+    items
+  }));
 
   return (
     <main className={styles.menuPage}>
@@ -38,9 +66,11 @@ export default function MenuPage() {
             <button
               key={category.name}
               className={`${styles.categoryBtn} ${
-                index === 0 ? styles.active : ""
-              }`}
-              onClick={() => setActiveCategory(category.name)}
+                index === selectedMenuCategory ? styles.active : ""}`}
+              onClick={() => {
+                setActiveCategory(category.name);
+                setSelectedMenuCategory(index);
+              }}
             >
               <Icon className={styles.icon} />
               <span className={styles.label}>{category.name}</span>
@@ -49,38 +79,33 @@ export default function MenuPage() {
         })}
       </div>
 
-      {menuItems
-        .filter((section) =>
-          activeCategory === "Popular"
-            ? section.items.filter((item) => item.popular)
-            : section.category === activeCategory
-        )
-        .map((section) => (
-          <section key={section.category} className={styles.section}>
-            <h2>{section.category}</h2>
-            <ul>
-              {section.items.map((item) => (
-                <li key={item.name} className={styles.item}>
-                  {item.image && <img src={item.image} alt={item.name} />}
-                  <div className={styles.details}>
-                    <h3>{item.name}</h3>
-                    <p>{item.description}</p>
-                    <p>{item.ingredients}</p>
-                    <p>{item.portion}</p>
-                    <ul>
-                      {Object.entries(item.nutrition).map(([key, value]) => (
-                        <li key={key}>
-                          {key.charAt(0).toUpperCase() + key.slice(1)} : {value}
-                        </li>
-                      ))}
-                    </ul>
-                    <span className={styles.price}>{item.price}</span>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
+      {groupedSections.map((section) => (
+        <section key={section.category} className={styles.section}>
+          <h2>{section.category}</h2>
+          <ul>
+            {section.items.map((item) => (
+              <li key={item.name} className={styles.item}>
+                {item.image && <img src={item.image} alt={item.name} />}
+                <div className={styles.details}>
+                  <h3>{item.name}</h3>
+                  <p>{item.description}</p>
+                  <p>{item.ingredients}</p>
+                  <p>{item.portion}</p>
+                  <p>{item.popular.toString()}</p>
+                  <ul>
+                    {Object.entries(item.nutrition).map(([key, value]) => (
+                      <li key={key}>
+                        {key.charAt(0).toUpperCase() + key.slice(1)} : {value}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className={styles.price}>{item.price}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
     </main>
   );
 }
