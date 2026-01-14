@@ -56,6 +56,35 @@ const filteredItems = menuItems.flatMap((section) => {
     items
   }));
 
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = (y - centerY) / 10;
+    const rotateY = (x - centerX) / 10;
+
+    card.style.transform = `
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.05)
+    `;
+    };
+
+    const handleMouseLeave = (e) => {
+    const card = e.currentTarget;
+    card.style.transform = `
+      rotateX(0deg)
+      rotateY(0deg)
+      scale(1)
+    `;
+  };
+
   return (
     <main className={styles.menuPage}>
       <div className={styles.selectCategory}>
@@ -82,19 +111,29 @@ const filteredItems = menuItems.flatMap((section) => {
       {groupedSections.map((section) => (
         <section key={section.category} className={styles.section}>
           <h2>{section.category}</h2>
-          <ul>
+          <ul className={styles.card_menu}>
             {section.items.map((item) => (
-              <li key={item.name} className={styles.item}>
+              <li 
+                key={item.name} 
+                className={styles.item} 
+                onMouseMove={(e) => handleMouseMove(e)}
+                onMouseLeave={(e) => handleMouseLeave(e)}
+              >
                 {item.image && <img src={item.image} alt={item.name} />}
-                <div className={styles.details}>
-                  <h3>{item.name}</h3>
-                  <p>{item.description}</p>
-                  <p>{item.ingredients}</p>
+                <div className={styles.menuContent}>
+                  <h3 className={styles.menuItemTitle}>{item.name}</h3>
+                  <p className={styles.menuDescription}>{item.description}</p>
+                  <div className={styles.menuIngredients}>
+                    {item.ingredients.map((ingredient, index) => (
+                    <span key={index} className={styles.ingredient}>
+                      {ingredient}
+                    </span>
+                    ))}
+                  </div>
                   <p>{item.portion}</p>
-                  <p>{item.popular.toString()}</p>
                   <ul>
                     {Object.entries(item.nutrition).map(([key, value]) => (
-                      <li key={key}>
+                      <li key={key} className={styles.menuDescription}>
                         {key.charAt(0).toUpperCase() + key.slice(1)} : {value}
                       </li>
                     ))}
