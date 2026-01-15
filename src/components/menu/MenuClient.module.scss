@@ -80,6 +80,14 @@
   position: relative;
 }
 
+.categoryBtn:last-child {
+  margin-right: 25px; 
+}
+
+.categoryBtn:first-child {
+  margin-left: 25px; 
+}
+
 .icon {
   font-size: 1.8rem;
 }
@@ -120,6 +128,7 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
+  padding: 0;
 
   .item {
     position: relative;
@@ -265,6 +274,10 @@
   .selectCategory {
     gap: 1.5rem;
     overflow-x: auto;
+  }
+
+  .selectCategory {
+    justify-content: unset;
   }
 }
 
