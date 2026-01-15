@@ -56,7 +56,11 @@ const filteredItems = menuItems.flatMap((section) => {
     items
   }));
 
+  const isTouchDevice = () => window.matchMedia("(pointer: coarse)").matches;
+
   const handleMouseMove = (e) => {
+    if (isTouchDevice()) return;
+
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
 
@@ -77,12 +81,14 @@ const filteredItems = menuItems.flatMap((section) => {
     };
 
     const handleMouseLeave = (e) => {
-    const card = e.currentTarget;
-    card.style.transform = `
-      rotateX(0deg)
-      rotateY(0deg)
-      scale(1)
-    `;
+      if (isTouchDevice()) return;
+
+      const card = e.currentTarget;
+      card.style.transform = `
+        rotateX(0deg)
+        rotateY(0deg)
+        scale(1)
+      `;
   };
 
   return (
@@ -123,21 +129,31 @@ const filteredItems = menuItems.flatMap((section) => {
                 <div className={styles.menuContent}>
                   <h3 className={styles.menuItemTitle}>{item.name}</h3>
                   <p className={styles.menuDescription}>{item.description}</p>
-                  <div className={styles.menuIngredients}>
-                    {item.ingredients.map((ingredient, index) => (
-                    <span key={index} className={styles.ingredient}>
-                      {ingredient}
-                    </span>
-                    ))}
-                  </div>
-                  <p>{item.portion}</p>
-                  <ul>
-                    {Object.entries(item.nutrition).map(([key, value]) => (
-                      <li key={key} className={styles.menuDescription}>
-                        {key.charAt(0).toUpperCase() + key.slice(1)} : {value}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className={styles.additionalItemInfo}>
+
+                    <div className={styles.menuIngredients}>
+                      {item.ingredients.map((ingredient, index) => (
+                      <span key={index} className={styles.ingredient}>
+                        {ingredient}
+                      </span>
+                      ))}
+                    </div>
+
+                    <div className={styles.nutritionGrid}>
+                      {Object.entries(item.nutrition).map(([key, value]) => (
+                        <div key={key} className={styles.nutritionItem}>
+                          <span className={styles.nutritionLabel}>
+                            {key}
+                          </span>
+                          <span className={styles.nutritionValue}>
+                            {value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>                    <p className={styles.portionBadge}>
+                      {item.portion}
+                    </p>
                   <span className={styles.price}>{item.price}</span>
                 </div>
               </li>

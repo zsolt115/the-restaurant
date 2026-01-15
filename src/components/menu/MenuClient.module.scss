@@ -123,8 +123,8 @@
 
   .item {
     position: relative;
-    width: 250px;
-    height: 400px;
+    width: 300px;
+    height: 550px;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
     transition: transform 0.1s ease, box-shadow 0.2s ease;
@@ -141,11 +141,60 @@
   }
 
      .menuContent {
-    background: rgba(20, 26, 26, 0.85);
-    border-radius: 16px;
-    padding: 16px;
-    margin-top: 10px;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        display: grid;
+  grid-template-rows:
+    auto   /* title */
+    auto   /* description */
+    auto   /* ingredients */
+    1fr    /* spacer */
+    auto   /* portion */
+    auto   /* nutrition */
+    auto;  /* price */
+      background: rgba(20, 26, 26, 0.85);
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 10px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+        .portionBadge {
+          align-self: flex-start;
+          margin: 8px 0 12px;
+          padding: 4px 10px;
+          font-size: 12px;
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.08);
+          color: #d0d0d0;
+          width: fit-content;
+        }
+
+        .nutritionGrid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 6px 12px;
+          margin: 10px 0 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 12px;
+        }
+
+        .nutritionItem {
+          display: flex;
+          justify-content: space-between;
+          font-size: 13px;
+        }
+
+        .nutritionItem:first-child .nutritionValue {
+          color: #ffb347;
+        }
+
+        .nutritionLabel {
+          color: #9a9a9a;
+          text-transform: capitalize;
+        }
+
+        .nutritionValue {
+          color: #ffffff;
+          font-weight: 500;
+        }
       }
       
     img {
@@ -162,7 +211,7 @@
     }
 
     .menuDescription {
-      font-size: 16px;
+      font-size: 13px;
       color: #b5b5b5;
       margin: 0 0 15px 0;
     }
@@ -170,18 +219,18 @@
 .menuIngredients {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  justify-content: center;
-  margin: 10px 0 12px;
+  gap: 3px;
+  justify-content: space-evenly;
+  margin: 5px 0 6px;
 
   .ingredient {
     font-size: 12px;
-    padding: 4px 10px;
+    padding: 2px 8px;
     border-radius: 999px;
     background-color: #f3f3f3;
     color: #555;
     white-space: nowrap;
-    line-height: 1.2;
+    line-height: 1.1;
   }
 }
 
