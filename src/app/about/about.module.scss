@@ -1,0 +1,53 @@
+.aboutPage {
+  padding: 2rem;
+  color: var(--color-text);
+    border-radius: 1rem;
+  max-width: 100%;
+  margin: 2rem auto;
+  background: var(--color-bg-secondary);
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: var(--color-title_h1);
+  }
+}
+
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  font-size: 1.5rem;
+
+  img {
+    width: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+  }
+}
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background: var(--color-bg-secondary);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
